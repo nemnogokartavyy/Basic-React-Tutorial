@@ -1,21 +1,14 @@
-// ⊗jsrtPmCdRt
+// ⊗jsrtPmCdTr
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-  let isAdmin = true;
-  let text;
+  const age = 19;
 
-  if (isAdmin) {
-    text = <div>
-      <p>йцуке</p>
-      <p>йцуке</p>
-      <p>йцуке</p>
-    </div>
-  };
-
-  return text;
+  return <div>
+    {age > 18 ? <p>Больше 18</p> : <p>Меньше 18</p>}
+  </div>;
 }
 
 export default App;
