@@ -1,16 +1,21 @@
-// ⊗jsrtPmJxVN
+// ⊗jsrtPmJxVAr
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-  const name = 'user';
-  const age = '30';
+  const arr = [1, 2, 3, 4, 5];
 
-  return <div>
-    name: {name},
-    age:  {age}
-  </div>;
+  return (
+    <ul>
+      <li>{arr[0]}</li>
+      <li>{arr[1]}</li>
+      <li>{arr[2]}</li>
+      <li>{arr[3]}</li>
+      <li>{arr[4]}</li>
+    </ul>
+  )
+
 }
 
 export default App;
