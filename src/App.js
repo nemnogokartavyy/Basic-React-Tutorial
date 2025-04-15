@@ -1,13 +1,13 @@
-// ⊗jsrtPmCdTr
+// ⊗jsrtPmCdLA
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-  const age = 19;
+  const isAuth = true;
 
   return <div>
-    {age > 18 ? <p>Больше 18</p> : <p>Меньше 18</p>}
+    {isAuth && <p>вы авторизованы</p>}
   </div>;
 }
 
