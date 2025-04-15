@@ -1,19 +1,21 @@
+// ⊗jsrtPmJxRN
+
 import React from 'react';
 
-// ⊗jsrtPmJxInr
-
+{/* #1 */ }
 function App() {
-  return <div>
-
-    {/* #1 */}
-    texttext
-
-    {/* #2 */}
-    <p class='text'>text</p> {/* #3 */}
-    <p class='text'>text</p> {/* #3 */}
-    <p class='text'>text</p> {/* #3 */}
-
-  </div>;
+  return <ul>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+    <li>10</li>
+  </ul>
 }
 
 export default App;
