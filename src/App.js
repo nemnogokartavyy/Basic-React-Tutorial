@@ -1,18 +1,21 @@
-// ⊗jsrtPmFcTC
+// ⊗jsrtPmFcHd
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-
-  function getDigitsSum(num) {
-    return String(num).split('').reduce((sum, elem) => sum += +elem, 0);
+  function show1() {
+    alert(1);
   }
 
-  return (
-    <p>{getDigitsSum(12345)}</p>
-  )
+  function show2() {
+    alert(2);
+  }
 
+  return <div>
+    <button onClick={show1}>act1</button>
+    <button onClick={show2}>act2</button>
+  </div>;
 }
 
 export default App;
