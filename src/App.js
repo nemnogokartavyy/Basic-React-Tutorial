@@ -1,4 +1,4 @@
-// ⊗jsrtPmFcInr
+// ⊗jsrtPmFcTC
 
 import React from 'react';
 
@@ -10,7 +10,7 @@ function App() {
   }
 
   return (
-    <p>{getDigitsSum(123)}</p>
+    <p>{getDigitsSum(12345)}</p>
   )
 
 }
