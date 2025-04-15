@@ -1,17 +1,14 @@
-// ⊗jsrtPmJxVO
+// ⊗jsrtPmJxVAt
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-  const obj = { name: 'john', surname: 'smit' };
+  const attr = 'block';
 
-  return (
-    <p>
-      name:    <span>{obj.name}</span>, <br />
-      surname: <span>{obj.surname}</span>
-    </p>
-  );
+  return <div id={attr}>
+    text
+  </div>;
 }
 
 export default App;
