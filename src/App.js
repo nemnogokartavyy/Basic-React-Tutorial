@@ -1,15 +1,20 @@
-// ⊗jsrtPmJxTS
+// ⊗jsrtPmJxTML
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-  const li1 = <li>text1</li>;
-  const li2 = <li>text2</li>;
-  const li3 = <li>text3</li>;
-  const list = <ul>{li1}{li2}{li3}</ul>;
+  const items = (
+    <>
+      <li>text1</li>
+      <li>text2</li>
+      <li>text3</li>
+    </>
+  );
 
-  return list;
+  return <ul>
+    {items}
+  </ul>
 }
 
 export default App;
