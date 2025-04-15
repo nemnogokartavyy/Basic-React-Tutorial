@@ -1,20 +1,19 @@
-// ⊗jsrtPmCdSh
+// ⊗jsrtPmCdRt
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-  let isAdult;
+  let isAdmin = true;
   let text;
-  let age = 20;
 
-  if (age >= 18) {
-    isAdult = true;
-  } else {
-    isAdult = false;
-  }
-
-  isAdult ? text = <p>Есть 18 лет</p> : text = <p>Нет 18 лет</p>;
+  if (isAdmin) {
+    text = <div>
+      <p>йцуке</p>
+      <p>йцуке</p>
+      <p>йцуке</p>
+    </div>
+  };
 
   return text;
 }
