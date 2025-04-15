@@ -1,17 +1,24 @@
-// ⊗jsrtPmFcHP
+// ⊗jsrtPmFcEO
 
 import React from 'react';
 
-{/* #1 */ }
 function App() {
-  function showMess(name) {
-    alert(name);
+
+  //1
+  function func1(event) {
+    console.log(event);
   }
+
+  //2
+  function func2(event) {
+    console.log(event.target);
+  }
+
   return <div>
-    <button onClick={() => showMess(1)}>act1</button>
-    <button onClick={() => showMess(2)}>act2</button>
-    <button onClick={() => showMess(3)}>act3</button>
+    <button onClick={func1}>act1</button>
+    <button onClick={func2}>act2</button>
   </div>;
+
 }
 
 export default App;
