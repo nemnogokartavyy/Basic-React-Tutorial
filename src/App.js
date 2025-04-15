@@ -1,10 +1,16 @@
-// ⊗jsrtPmJxRU
+// ⊗jsrtPmJxRE
 
 import React from 'react';
 
 {/* #1 */ }
 function App() {
-  return <input />;
+  return (
+    <>
+      <input />
+      <input />
+      <input />
+    </>
+  );
 }
 
 export default App;
