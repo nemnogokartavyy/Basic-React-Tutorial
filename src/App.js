@@ -1,20 +1,24 @@
-// ⊗jsrtPmFmsIO
+// ⊗jsrtPmFmsIF
 
 import React, { useState } from 'react';
 
-//1
+//2
 function App() {
+  const [ageUser, setAgeUser] = useState(0);
 
-  const [input, setInput] = useState('');
+  let dateNow = new Date();
 
-  function func(value) {
-    return value.split('').length;
+  function getYearBirth(event) {
+    setAgeUser(event.target.value);
   }
 
   return (
     <>
-      <input value={input} onChange={event => setInput(event.target.value)} />
-      <p>{func(input)}</p>
+      <input value={ageUser} type='number' onChange={getYearBirth} />
+
+      <p>
+        Год рождения: {dateNow.getFullYear() - +ageUser}
+      </p>
     </>
   )
 
