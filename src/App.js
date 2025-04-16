@@ -2,17 +2,24 @@
 
 import React, { useState } from 'react';
 
-//2
+//3
 function App() {
 
-  const [input1, setInput1] = useState('2025-12-31');
-  const [input2, setInput2] = useState('2024-12-31');
+  let dateNow = new Date();
+
+  const [input1, setInput1] = useState(formDate(dateNow));
+  const [input2, setInput2] = useState(formDate(dateNow));
   const [result, setResult] = useState(0);
 
   function func(dateInput1, dateInput2) {
     let date1 = new Date(dateInput1);
     let date2 = new Date(dateInput2);
     setResult(Math.abs(date1 - date2) / (1000 * 60 * 60 * 24));
+  }
+
+  function formDate(date) {
+    let result = date.toLocaleString().slice(0, 10).split('.').reverse().join('-');
+    return result;
   }
 
   return (
