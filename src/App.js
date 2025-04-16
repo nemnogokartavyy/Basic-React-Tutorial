@@ -4,20 +4,23 @@ import React, { useState } from 'react';
 
 //2
 function App() {
-  const [ageUser, setAgeUser] = useState(0);
 
-  let dateNow = new Date();
+  const [degC, setDegC] = useState(0);
 
   function getYearBirth(event) {
-    setAgeUser(event.target.value);
+    setDegC(event.target.value);
+  }
+
+  function getDegF(c) {
+    return (c - 32) * 5 / 9;
   }
 
   return (
     <>
-      <input value={ageUser} type='number' onChange={getYearBirth} />
+      <input value={degC} type='number' onChange={getYearBirth} />
 
       <p>
-        Год рождения: {dateNow.getFullYear() - +ageUser}
+        Градусы цельсия: {getDegF(degC)}
       </p>
     </>
   )
