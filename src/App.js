@@ -1,19 +1,19 @@
-import uuid from 'react-uuid';
-import { nanoid } from 'nanoid'
+// ⊗jsrtPmStBV
+
 import React, { useState } from 'react';
 
-// ⊗jsrtPmStRt
 //1
+//2
 function App() {
 
-  const [name, setName] = useState('Петя');
-  const [surname, setSurname] = useState('Иванов');
+  const [ban, setBan] = useState(false);
 
   return <div>
-    <p>Имя: {name}</p>
-    <p>Фамилия: {surname}</p>
-    <button onClick={() => setName('Егор')}>change name</button>
-    <button onClick={() => setSurname('Петров')}>change seurname</button>
+    <p>Пользователь: {ban ? 'забанен' : 'не забанен'}</p>
+    {!ban
+      ? <button onClick={() => setBan(true)}>забанить</button>
+      : <button onClick={() => setBan(false)}>разбанить</button>
+    }
   </div>
 
 }
