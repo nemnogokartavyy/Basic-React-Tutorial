@@ -1,19 +1,16 @@
-// ⊗jsrtPmStBV
+// ⊗jsrtPmStIC
 
 import React, { useState } from 'react';
 
 //1
-//2
 function App() {
 
-  const [ban, setBan] = useState(false);
+  const [age, setAge] = useState(30);
 
   return <div>
-    <p>Пользователь: {ban ? 'забанен' : 'не забанен'}</p>
-    {!ban
-      ? <button onClick={() => setBan(true)}>забанить</button>
-      : <button onClick={() => setBan(false)}>разбанить</button>
-    }
+    <button onClick={() => setAge(age + 1)}>+</button>
+    <button onClick={() => setAge(age - 1)}>-</button>
+    <p>Возроаст - {age} лет.</p>
   </div>
 
 }
