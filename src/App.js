@@ -1,20 +1,20 @@
-import React from 'react';
 import uuid from 'react-uuid';
 import { nanoid } from 'nanoid'
+import React, { useState } from 'react';
 
-// ⊗jsrtPmIdFU
+// ⊗jsrtPmStUs
 //1
 function App() {
 
-  function id() {
-    return nanoid();
-  }
+  const [name, setName] = useState('Петя');
+  const [surname, setSurname] = useState('Иванов');
+  const [age, setAge] = useState('30');
 
-  const prods = [
-    { id: id(), name: 'product1', cost: 100 },
-    { id: id(), name: 'product2', cost: 200 },
-    { id: id(), name: 'product3', cost: 300 },
-  ];
+  return <div>
+    <p>Имя: {name}</p>
+    <p>Фамилия: {surname}</p>
+    <p>Возраст: {age}</p>
+  </div>
 
 }
 
