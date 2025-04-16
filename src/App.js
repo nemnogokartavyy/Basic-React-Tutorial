@@ -1,33 +1,35 @@
-// ⊗jsrtPmFmsRd
+// ⊗jsrtPmFmsAIB
 
 import React, { useState } from 'react';
 
-//2
+//1
 function App() {
 
-  const [value, setValue] = useState('0');
+  let arr = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+  const [notes, setNotes] = useState(arr);
+  let sum = 0;
 
-  let arr = ['js', 'css', 'html'];
+  const inputs = notes.map((note, index) => {
+    return <input
+      key={index}
+      value={note}
+      onChange={event => change(index, event)}
+    />;
+  });
+
+  function change(index, event) {
+    setNotes([...notes.slice(0, index), event.target.value, ...notes.slice(index + 1)])
+  }
+
+  function averageArithmetic(arr) {
+    sum = arr.reduce((acc, elem) => acc += +elem, 0) / arr.length;
+    return sum;
+  }
 
   return (
     <>
-      <label> Мой любимый ЯП - это JS
-        <input type='radio' name='radio' value='0' checked={value === '0' ? true : false} onChange={(event) => setValue(event.target.value)} />
-      </label>
-      <label> Мой любимый ЯП - это CSS
-        <input type='radio' name='radio' value='1' checked={value === '1' ? true : false} onChange={(event) => setValue(event.target.value)} />
-      </label>
-      <label> Мой любимый ЯП - это HTML
-        <input type='radio' name='radio' value='2' checked={value === '2' ? true : false} onChange={(event) => setValue(event.target.value)} />
-      </label>
-      <p>
-        {value === '0' && arr[value]}
-        {value === '1' && arr[value]}
-        {value === '2' && arr[value]}
-      </p>
-      <p>
-        {value === '0' && 'Молодец!'}
-      </p>
+      {inputs};
+      <p>{averageArithmetic(notes)}</p>
     </>
   )
 
