@@ -1,22 +1,27 @@
-// ⊗jsrtPmFmsChCR
+// ⊗jsrtPmFmsSI
 
 import React, { useState } from 'react';
 
-//2
+//1
 function App() {
-  const [checked, setChecked] = useState(true);
+  const [value, setValue] = useState('');
 
-  let text;
-  if (checked) {
-    text = <p>text</p>
-  } else {
-    text = '';
+  function handleChange(event) {
+    setValue(event.target.value);
   }
 
   return <div>
-    <input type="checkbox" checked={checked}
-      onChange={() => setChecked(!checked)} />
-    {text}
+    <select value={value} onChange={handleChange}>
+      <option>Минск</option>
+      <option>Могилев</option>
+      <option>Брест</option>
+      <option>Гомель</option>
+      <option>Витебск</option>
+      <option>Гродно</option>
+    </select>
+    <p>
+      {value}
+    </p>
   </div>;
 }
 
