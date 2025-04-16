@@ -2,33 +2,28 @@
 
 import React, { useState } from 'react';
 
-//1
+//2
 function App() {
 
-  const [input1, setInput1] = useState(0);
-  const [input2, setInput2] = useState(0);
+  const [input1, setInput1] = useState('2025-12-31');
+  const [input2, setInput2] = useState('2024-12-31');
   const [result, setResult] = useState(0);
 
-
-  function sum(num1, num2) {
-    setResult(+num1 + +num2);
+  function func(dateInput1, dateInput2) {
+    let date1 = new Date(dateInput1);
+    let date2 = new Date(dateInput2);
+    setResult(Math.abs(date1 - date2) / (1000 * 60 * 60 * 24));
   }
-
-  function mul(num1, num2) {
-    setResult(num1 * num2);
-  }
-
 
   return (
     <>
       <input value={input1} onChange={(event) => { setInput1(event.target.value) }} />
       <input value={input2} onChange={(event) => { setInput2(event.target.value) }} />
-      
-      <button onClick={() => sum(input1, input2)}>ClickSum</button>
-      <button onClick={() => mul(input1, input2)}>ClickMul</button>
+
+      <button onClick={() => func(input1, input2)}>ClickSum</button>
 
       <p>
-        {result}
+        Разница между датами в днях: {result}.
       </p>
     </>
   )
