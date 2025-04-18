@@ -1,103 +1,61 @@
-// ⊗jsrtPmDtOAOp
-
-import React, { useState } from 'react';
-import { nanoid } from 'nanoid';
+// ⊗jsrtPmDtSh
 
 //1
-//2
-//3
+import React, { useState } from 'react';
+
 const App = () => {
 
     const initNotes = [
         {
-            id: '111GYi9G_uC4gBF1e2SixDvu',
-            prop1: 'value11',
-            prop2: 'value12',
-            prop3: 'value13',
+            id: 1,
+            name: 'name1',
+            desc: 'long description 1',
+            show: false,
         },
         {
-            id: '222IWSpfBPSV3SXgRF87uO74',
-            prop1: 'value21',
-            prop2: 'value22',
-            prop3: 'value23',
+            id: 2,
+            name: 'name2',
+            desc: 'long description 2',
+            show: false,
         },
         {
-            id: '333JAmjRlfQT8rLTm5tG2m1L',
-            prop1: 'value31',
-            prop2: 'value32',
-            prop3: 'value33',
+            id: 3,
+            name: 'name3',
+            desc: 'long description 3',
+            show: false,
         },
     ];
 
     const [notes, setNotes] = useState(initNotes);
 
-    const [valueProp1, setValueProp1] = useState();
-    const [valueProp2, setValueProp2] = useState();
-    const [valueProp3, setValueProp3] = useState();
-
-    const [idEdit, setIdEdit] = useState();
-
     const result = notes.map(note => {
-        return <li key={note.id}>
-            <span>{note.prop1}</span>
-            <span>{note.prop2}</span>
-            <span>{note.prop3}</span>
-
-            <button onClick={() => deleteElem(note.id)}>
-                Delete
-            </button>
-
-            <button onClick={() => addInInput(note.id)}>
-                AddInInput
-            </button>
-        </li>;
+        return <>
+            {note.show
+                ? <p key={note.id}>
+                    {note.name},
+                    <i>{note.desc}</i>
+                </p>
+                : <p key={note.id}>
+                    {note.name},
+                </p>
+            }
+            <button onClick={() => showElem(note.id)}>Show Descr</button>
+        </>
     });
 
-    function deleteElem(id) {
-        let arr = [];
-        notes.map(elem => {
-            if (elem.id !== id) {
-                arr.push(elem);
-            }
-        })
-        setNotes(arr);
-    }
-
-    function addInInput(id) {
-        setIdEdit(id);
-        notes.map(elem => {
+    function showElem(id) {
+        let copy = Object.assign(notes);
+        copy = notes.map(elem => {
             if (elem.id === id) {
-                setValueProp1(elem.prop1);
-                setValueProp2(elem.prop2);
-                setValueProp3(elem.prop3);
+                return { ...elem, show: !elem.show }
             }
+            return elem;
         })
-    }
-
-    function addInLi(id) {
-        let arrCopy = notes.map((elem) => {
-            if (elem.id === id) {
-                return {
-                    ...elem,
-                    prop1: valueProp1,
-                    prop2: valueProp2,
-                    prop3: valueProp3,
-                };
-            } else {
-                return elem;
-            }
-        })
-        setNotes(arrCopy);
+        setNotes(copy);
     }
 
     return <div>
-        <ul>
-            {result}
-        </ul>
-        <input value={valueProp1} onChange={(event) => setValueProp1(event.target.value)} />
-        <input value={valueProp2} onChange={(event) => setValueProp2(event.target.value)} />
-        <input value={valueProp3} onChange={(event) => setValueProp3(event.target.value)} />
-        <button onClick={() => addInLi(idEdit)}>AddInLi</button>
+        {result}
     </div>;
 
 };
