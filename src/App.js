@@ -1,7 +1,6 @@
-// ⊗jsrtPmCpChA
+// ⊗jsrtPmCpChL
 
 //1
-//2
 import React, { useState } from 'react';
 import { User } from './components/User';
 
@@ -13,6 +12,10 @@ const App = () => {
         { id: 3, name: 'user3', surn: 'surn3', age: 32 },
     ];
 
+    let result = users.map(user => {
+        return <User key={user.id} name={user.name} surname={user.surn} age={user.age} />
+    })
+
     return (
         <table>
             <thead>
@@ -23,9 +26,7 @@ const App = () => {
                 </tr>
             </thead>
             <tbody>
-                <User name={users[0].name} surname={users[0].surn} age={users[0].age} />
-                <User name={users[1].name} surname={users[1].surn} age={users[1].age} />
-                <User name={users[2].name} surname={users[2].surn} age={users[2].age} />
+                {result}
             </tbody>
         </table>
     )
