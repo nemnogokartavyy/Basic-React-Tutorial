@@ -1,19 +1,37 @@
 import React from "react";
+import { UserField } from "./UserField";
 
 const User = ({ id, name, surname, age, ban, banIt, isEdit, toggleMode, editUser }) => {
     return (
         <>
             <tr>
-                <td>{isEdit
-                    ? <input value={name} onChange={(event) => editUser(id, 'name', event)} />
-                    : <span>{name}</span>}</td>
-                <td>{isEdit
-                    ? <input value={surname} onChange={(event) => editUser(id, 'surname', event)} />
-                    : <span>{surname}</span>}</td>
-                <td>{isEdit
-                    ? <input value={age} onChange={(event) => editUser(id, 'age', event)} />
-                    : <span>{age}</span>}</td>
-                <td>{id}</td>
+
+                <UserField
+                    name={name}
+                    id={id}
+                    type='name'
+                    editUser={editUser}
+                    isEdit={isEdit}
+                />
+                <UserField
+                    name={surname}
+                    id={id}
+                    type='surname'
+                    editUser={editUser}
+                    isEdit={isEdit}
+                />
+                <UserField
+                    name={age}
+                    id={id}
+                    type='age'
+                    editUser={editUser}
+                    isEdit={isEdit}
+                />
+                <UserField
+                    name={id}
+                    id={id}
+                />
+
                 <td>{ban ? 'Забанен' : 'Активен'}</td>
                 <td>
                     <button onClick={() => banIt(id)}>{ban ? 'Разбанить' : 'Забанить'}</button>
