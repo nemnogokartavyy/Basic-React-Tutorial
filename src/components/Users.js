@@ -14,6 +14,7 @@ const Users = () => {
     const result = users.map(user => {
         return <User
             key={user.id}
+            id={user.id}
             name={user.name}
             surname={user.surname}
             age={user.age} />

@@ -13,6 +13,7 @@ const App = () => {
                     <th>Имя</th>
                     <th>Фамилия</th>
                     <th>Возраст</th>
+                    <th>ID</th>
                 </tr>
             </thead>
             <tbody>
