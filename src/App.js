@@ -1,15 +1,13 @@
-// ⊗jsrtPmCpUs
+// ⊗jsrtPmCpPr
 
 //1
 import React, { useState } from 'react';
-import { User } from './components/User';
+import { Employee } from './components/Employee';
 
 const App = () => {
     return (
         <>
-            <User />
-            <User />
-            <User />
+            <Employee surname={'Петров'} name={'Петр'} salary={1000} />
         </>
     )
 };
