@@ -1,10 +1,12 @@
 import React from "react";
 
-const User = () => {
+const User = ({ name, surname, age }) => {
     return (
-        <>
-            <p>Какой-то текст</p>
-        </>
+        <tr>
+            <td>{name}</td>
+            <td>{surname}</td>
+            <td>{age}</td>
+        </tr>
     )
 }
 
