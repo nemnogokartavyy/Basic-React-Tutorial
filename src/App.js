@@ -1,4 +1,4 @@
-// ⊗jsrtPmCpPS
+// ⊗jsrtPmCpChPS
 
 //1
 import React from 'react';
@@ -14,6 +14,7 @@ const App = () => {
                     <th>Фамилия</th>
                     <th>Возраст</th>
                     <th>ID</th>
+                    <th>Статус</th>
                 </tr>
             </thead>
             <tbody>
