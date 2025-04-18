@@ -5,7 +5,13 @@ import React, { useState } from 'react';
 import { User } from './components/User';
 
 const App = () => {
-    return <User />
+    return (
+        <>
+            <User />
+            <User />
+            <User />
+        </>
+    )
 };
 
 export default App;
