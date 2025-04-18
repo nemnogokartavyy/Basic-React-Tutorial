@@ -4,9 +4,9 @@ import { User } from "./User";
 const Users = () => {
 
     const initUsers = [
-        { id: 1, name: 'user1', surname: 'surn1', age: 30, ban: false, isEdit: false },
-        { id: 2, name: 'user2', surname: 'surn2', age: 31, ban: false, isEdit: false },
-        { id: 3, name: 'user3', surname: 'surn3', age: 32, ban: false, isEdit: false },
+        { id: 1, name: 'user1', surname: 'surn1', age: 30, ban: false },
+        { id: 2, name: 'user2', surname: 'surn2', age: 31, ban: false },
+        { id: 3, name: 'user3', surname: 'surn3', age: 32, ban: false },
     ];
 
     const [users, setUser] = useState(initUsers);
@@ -21,8 +21,7 @@ const Users = () => {
             ban={user.ban}
             banIt={banIt}
             isEdit={user.isEdit}
-            toggleMode={toggleMode}
-            editUser={editUser}
+            changeField={changeField}
         />
     })
 
@@ -37,25 +36,16 @@ const Users = () => {
         setUser(copy);
     }
 
-    function toggleMode(id) {
-        setUser(users.map(user => {
-            if (user.id === id) {
-                user.isEdit = !user.isEdit;
-            }
-
-            return user;
-        }));
-    }
-
-    function editUser(id, field, event) {
-        setUser(users.map(user => {
-            if (user.id === id) {
-                user[field] = event.target.value;
-            }
-
-            return user;
-        }));
-    }
+    function changeField(id, field, event) {
+        if (field !== 'id') {
+            setUser(users.map(user => {
+                if (user.id === id) {
+                    user[field] = event.target.value;
+                }
+                return user;
+            }));
+        }
+    };
 
     return (
         <>
