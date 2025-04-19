@@ -1,28 +1,20 @@
-// ⊗jsrtPmCpMVS
+// ⊗jsrtPmCoLSU
 
 //1
+//2
 import React from 'react';
-import { Users } from './components/Users';
+
+import Calculator from './temperature/Calculator';
+import BMICalculator from './bodymassindex/BMICalculator';
 
 const App = () => {
 
     return (
-        <table>
-            <thead>
-                <tr>
-                    <th>Имя</th>
-                    <th>Фамилия</th>
-                    <th>Возраст</th>
-                    <th>ID</th>
-                    <th>Статус</th>
-                </tr>
-            </thead>
-            <tbody>
-                <Users />
-            </tbody>
-        </table>
+        <>
+            <Calculator />
+            <BMICalculator />
+        </>
     )
-
 };
 
 export default App;
