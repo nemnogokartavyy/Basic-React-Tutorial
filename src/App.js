@@ -1,24 +1,21 @@
-// ⊗jsrtPmCoTOS
+// ⊗jsrtPmSyGlC
 
 //1
 import React, { useState } from 'react';
+import './styles.css';
 
 const App = () => {
 
-    const [temp, setTemp] = useState(0);
-
     return (
-        <div>
-            <label>
-                Температура по цельсию: <input type='number'
-                    value={temp} onChange={(event) => setTemp(event.target.value)} />
-            </label>
-            <label>
-                Температура по фарегейту: <input type='number'
-                    value={((temp * 9 / 5) + 32)} onChange={(event) => setTemp((event.target.value - 32) * 5 / 9)} />
-            </label>
-        </div>
-    )
+
+        <>
+            <div className='block'>
+                <button className='btn1'>Click1</button>
+                <button className='btn2'>Click1</button>
+            </div>
+        </>
+
+    );
 
 };
 
