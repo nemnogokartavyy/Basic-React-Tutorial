@@ -1,12 +1,18 @@
-// ⊗jsrtPmSySCP
+// ⊗jsrtPmSySCE
 
 //1
+//2
+//3
 import React from 'react';
-import Block from './components/Block';
+import Block1 from './components/Block1';
 
 function App() {
 
-    return <Block />
+    return (
+        <>
+            <Block1 />
+        </>
+    )
 
 };
 
